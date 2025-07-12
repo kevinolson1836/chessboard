@@ -131,7 +131,7 @@ def startup():
     
     # pass
 
-4
+
 def scan_for_hall_effect_chnages():
     while True:
         with SMBus(1) as bus:  # "1" is the I2C bus number (Raspberry Pi uses 1)
