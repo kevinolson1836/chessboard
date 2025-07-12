@@ -26,7 +26,7 @@ CHESS_SQUARES = []
 def main():
     global BOARD
 
-    init_chess_squares(BOARD)
+    # init_chess_squares(BOARD)
     print_board_and_display(BOARD)
 
 def init_chess_squares(BOARD):
@@ -63,6 +63,18 @@ def init_chess_squares(BOARD):
 
 def print_board_and_display(BOARD):
     print(BOARD)
+    
+
+    # Create the move from d2 to d4
+    move = chess.Move.from_uci("a2a4")
+
+    # Check if it's legal (optional but good practice)
+    if move in BOARD.legal_moves:
+        BOARD.push(move)
+    else:
+        print("Illegal move!")
+
+
     svg = chess.svg.board(BOARD)
     with open("board.svg", "w") as f:
         f.write(svg)
